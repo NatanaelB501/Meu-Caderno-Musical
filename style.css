@@ -1,5 +1,5 @@
 * {
-    margin: 0;
+    margin: 0.5% 0% 0% 0%;
     padding: 0;
     box-sizing: border-box;
 }
@@ -10,32 +10,28 @@ body {
     color: #fff;
 }
 
-header {
+.cabecalho {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: #1e1e1e;
-    position: relative;
-}
-
-h1 {
-    margin: 0;
-    font-size: 24px;
-    color: #fff;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    background-color: #121212;
+    
 }
 
 #search-bar {
-    padding: 10px;
-    font-size: 16px;
-    border: none;
+    margin-left: 3%;
+    margin-top: 1%;
+    height: 38px;
+    width: 14%;
     border-radius: 4px;
-    width: 250px;
-    background-color: #fff;
-    color: #000;
+}
+
+#search-bar::placeholder{
+    text-align: center;
+    
+}
+
+h1 {
+    margin-right: 42%;
 }
 
 main {
@@ -43,8 +39,8 @@ main {
 }
 
 .sidebar {
-    width: 300px;
-    background-color: #1e1e1e;
+    width: 400px;
+    background-color: #121212;
     padding: 20px;
     height: 100vh;
     display: flex;
@@ -143,12 +139,15 @@ button {
 
 
 .main-content {
+    align-items: center;
     flex-grow: 1;
     padding: 20px;
     background-color: #1c1c1c;
+    
 }
 
 #music-display {
+    align-items: center;
     background-color: #2e2e2e;
     padding: 20px;
     border-radius: 8px;
@@ -216,14 +215,15 @@ button {
 }
 
 .add-music {
-    width: 30%;
+    width: 23%;
     text-align: center;
     margin: 20px 0;
 }
 
 .add-music input,
 .add-music textarea {
-    width: 80%;
+    text-align: center;
+    width: 70%;
     margin: 5px 0;
     padding: 10px;
     font-size: 16px;
@@ -231,8 +231,8 @@ button {
 
 .add-music button {
     white-space: nowrap;
-    padding: 10px 15px;
-    font-size: 16px;
+    padding: 19px 1px;
+    font-size: 14px;
 }
 
 footer {
@@ -256,6 +256,76 @@ footer a {
 .cifra-highlight {
     color: #a5ff51; /* Altere a cor para a que você preferir */
     font-weight: bold;
+}
+
+/* Media Query para Smartphones */
+@media (max-width: 768px) {
+
+    header {
+        padding: 10px;
+    }
+
+    .cabecalho {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        flex-grow: 2;
+    }
+
+    main {
+        padding: 10px;
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 10px;
+        border-right: none;
+    }
+
+    .main-content {
+        width: 100%;
+        padding: 10px;
+    }
+
+    #music-display {
+        padding: 15px;
+    }
+
+    #music-display h2 {
+        font-size: 20px;
+    }
+
+    #music-display pre {
+        font-size: 14px;
+    }
+
+    .music-item h3 {
+        font-size: 16px;
+    }
+
+    .delete-btn {
+        font-size: 18px;
+    }
+
+    .add-music {
+        padding: 15px;
+    }
+
+    .add-music input,
+    .add-music textarea {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .add-music button {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+
+    footer {
+        padding: 15px;
+    }
 }
 
 
