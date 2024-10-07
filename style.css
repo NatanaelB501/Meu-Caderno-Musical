@@ -1,0 +1,261 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #fff;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #1e1e1e;
+    position: relative;
+}
+
+h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#search-bar {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    width: 250px;
+    background-color: #fff;
+    color: #000;
+}
+
+main {
+    display: flex;
+}
+
+.sidebar {
+    width: 300px;
+    background-color: #1e1e1e;
+    padding: 20px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sidebar section h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 30%;
+    background-color: #2e2e2e;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.music-item {
+    display: flex;
+    justify-content: space-between; /* Alinha o botão à direita */
+    align-items: center; /* Alinha verticalmente ao centro */
+    margin-bottom: 10px; /* Espaço entre as músicas */
+}
+
+.music-title {
+    flex-grow: 1; /* O título ocupará o espaço restante */
+    margin: 0; /* Remove a margem padrão */
+}
+
+.delete-btn {
+    width: 10%;
+    background: none; /* Remove o fundo */
+    border: none; /* Remove borda */
+    cursor: pointer; /* Ícone de mão */
+    color: rgba(255, 255, 255, 0.247); /* Cor da lixeira */
+    font-size: 15px; /* Tamanho do ícone */
+    transition: color 0.3s ease; /* Transição suave */
+}
+
+.delete-btn:hover {
+    color: rgba(255, 0, 0, 0.24); /* Cor ao passar o mouse */
+}
+
+#repertory-name {
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 4px;
+}
+
+#repertory-list {
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #4d4c4c;
+    border-radius: 5px;
+    background-color: #474747;
+}
+
+#repertory-list div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+#repertory-list div:last-child {
+    border-bottom: none; /* Remove a borda do último item */
+}
+
+#repertory-list a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+#repertory-list button {
+    margin-left: 5px;
+    cursor: pointer;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 5px 8px;
+}
+
+#repertory-list button:hover {
+    background-color: #0056b3; /* Efeito hover nos botões */
+}
+
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #1c1c1c;
+}
+
+#music-display {
+    background-color: #2e2e2e;
+    padding: 20px;
+    border-radius: 8px;
+    color: #fff;
+    min-height: 200px;
+    font-size: 16px; /* Tamanho da fonte da letra/cifra */
+}
+
+.music-list-repertorio {
+    width: 10%;
+    
+}
+
+#edit-title {
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: none;
+    background-color: #2e2e2e;
+    color: #fff;
+}
+
+#edit-autor {
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: none;
+    background-color: #2e2e2e;
+    color: #fff;
+}
+
+#edit-cifra {
+    width: 100%;
+    height: 700px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: none;
+    background-color: #2e2e2e;
+    color: #fff;
+}
+
+.music-selection {
+    display: none; /* Inicialmente escondida */
+    position: absolute;
+    background-color: #2e2e2e;
+    border: 1px solid #ccc;
+    z-index: 1000;
+    padding: 10px;
+    width: 200px;
+    border-radius: 4px;
+}
+
+.music-selection div {
+    padding: 5px;
+    cursor: pointer;
+}
+
+.music-selection div:hover {
+    background-color: #3e3e3e;
+}
+
+.add-music {
+    width: 30%;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.add-music input,
+.add-music textarea {
+    width: 80%;
+    margin: 5px 0;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.add-music button {
+    white-space: nowrap;
+    padding: 10px 15px;
+    font-size: 16px;
+}
+
+footer {
+    text-align: center;
+}
+
+
+footer a {
+    text-decoration: none;
+}
+
+.dragging {
+    opacity: 0.5; /* Diminui a opacidade do item arrastado */
+}
+
+.cifra {
+    color: #a5ff51; /* Cor para as cifras */
+    font-weight: bold;
+}
+
+.cifra-highlight {
+    color: #a5ff51; /* Altere a cor para a que você preferir */
+    font-weight: bold;
+}
+
+

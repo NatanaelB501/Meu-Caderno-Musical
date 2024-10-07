@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Caderno Musical</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>Meu Caderno Musical</h1>
+        <input type="text" placeholder="Buscar música..." id="search-bar">
+    </header>
+    
+    <main>
+        <aside class="sidebar">
+            <section>
+                <h2>Ordenar Por:</h2>
+                <button id="sort-date">Data</button>
+                <button id="sort-title">Título</button>
+            </section>
+
+            <section>
+                <h2>Criar Repertório</h2>
+                <input type="text" placeholder="Nome do Repertório" id="repertory-name">
+                <button id="create-repertory">Criar</button>
+                
+                <div id="repertory-list">
+                    <!-- Repertórios criados vão aparecer aqui -->
+                </div>
+                <div id="music-selection" class="music-selection">
+                    <!-- A lista flutuante de músicas será preenchida aqui -->
+                </div>
+                
+            </section>
+
+            <section>
+                <h2>Lista de Músicas</h2>
+                <div id="music-list">
+                    <!-- Músicas adicionadas vão aparecer aqui -->
+                </div>
+            </section>
+        </aside>
+
+        <section class="main-content">
+            <div id="music-display">
+                <!-- A cifra da música aparecerá aqui -->
+            </div>
+        </section>
+
+        <section class="add-music">
+            <h2>Adicionar Nova Música</h2>
+            <input type="text" id="new-music-title" placeholder="Título da Música">
+            <input type="text" id="new-music-autor" placeholder="Autor da Música">
+            <textarea id="new-music-cifra" placeholder="Cifra da Música"></textarea>
+            <button id="add-music-button">Adicionar Música</button>
+        </section>
+        
+    </main>
+    <footer style="background-color: #282828; color: #fff; text-align: center; padding: 20px; position: relative;">
+        
+        <p>🌟Se você gosta do meu trabalho, siga-me no Instagram:🌟</p>
+        <a href="https://www.instagram.com/natanaelborges_" target="_blank" style="color: #00aaff; text-decoration: none; font-weight: bold;">@natanaelborges_</a>
+        <br>
+        <p style="margin-top: 10px;">💬 Se tiver sugestões ou feedback, não hesite em me contatar!</p>
+    </footer>
+    <script src="scripts.js"></script>
+
+</body>
+</html>
