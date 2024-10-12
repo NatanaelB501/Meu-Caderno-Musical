@@ -57,6 +57,13 @@
             <input type="text" id="new-music-autor" placeholder="Autor da Música">
             <textarea id="new-music-cifra" placeholder="Cifra da Música"></textarea>
             <button id="add-music-button">Adicionar Música</button>
+
+            <div id="file-management">
+                <button onclick="salvarMusicas()">Salvar Músicas</button>
+                <input type="file" id="file-input" onchange="carregarMusicas()" style="display:none;">
+                <button onclick="document.getElementById('file-input').click()">Carregar Músicas</button>
+              </div>
+              
         </section>
         
     </main>

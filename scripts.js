@@ -307,3 +307,53 @@ function searchMusic() {
 }
 
 
+function salvarMusicas() {
+    // Obter as músicas do localStorage ou do array que você usa para armazenar as músicas
+    let listaDeMusicas = JSON.parse(localStorage.getItem('musicas')) || [];
+  
+    // Converter as músicas para JSON
+    let jsonMusicas = JSON.stringify(listaDeMusicas, null, 2);
+  
+    // Criar um blob com o conteúdo JSON
+    let blob = new Blob([jsonMusicas], { type: 'application/json' });
+  
+    // Criar um link temporário para download
+    let link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = 'musicas.json';
+  
+    // Simular um clique no link para iniciar o download
+    link.click();
+  }
+ 
+  function carregarMusicas() {
+    let input = document.getElementById('file-input');
+    let file = input.files[0];
+  
+    if (file) {
+      let reader = new FileReader();
+      reader.onload = function(e) {
+        try {
+          // Tentar carregar o arquivo JSON
+          let musicasCarregadas = JSON.parse(e.target.result);
+  
+          // Verificar se é um array válido de músicas
+          if (Array.isArray(musicasCarregadas)) {
+            // Salvar no localStorage ou no array de músicas
+            localStorage.setItem('musicas', JSON.stringify(musicasCarregadas));
+  
+            // Atualizar a lista de músicas na interface (chame sua função de exibir músicas)
+            exibirMusicas();
+          } else {
+            alert("Arquivo inválido. Certifique-se de que está carregando um arquivo de músicas.");
+          }
+        } catch (error) {
+          alert("Erro ao ler o arquivo: " + error.message);
+        }
+      };
+  
+      // Ler o arquivo como texto
+      reader.readAsText(file);
+    }
+  }
+  
